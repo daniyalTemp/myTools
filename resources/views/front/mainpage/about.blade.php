@@ -60,7 +60,40 @@
         <h3 class="h3 testimonials-title">Your Comments</h3>
 
         <ul class="testimonials-list has-scrollbar">
+            <div class="modal-container" data-modal-container>
 
+                <div class="overlay" data-overlay></div>
+
+                <section class="testimonials-modal">
+
+                    <button class="modal-close-btn" data-modal-close-btn>
+                        <ion-icon name="close-outline"></ion-icon>
+                    </button>
+
+                    <div class="modal-img-wrapper">
+                        <figure class="modal-avatar-box">
+                            <img src="./assets/images/avatar-1.png" width="80" data-modal-img>
+                        </figure>
+
+                        <img src="./assets/images/icon-quote.svg" alt="quote icon">
+                    </div>
+
+                    <div class="modal-content">
+
+                        <h4 class="h3 modal-title" data-modal-title></h4>
+
+                        <time datetime="2021-06-14"></time>
+
+                        <div data-modal-text>
+                            <p>
+                            </p>
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
             @if(isset($comments))
                 @foreach($comments as $comment)
                     <li class="testimonials-item">
