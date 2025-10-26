@@ -42,6 +42,18 @@
                 </div>
 
             </li>
+            <li class="contact-item">
+
+                <div class="icon-box">
+                    <ion-icon name="bug-outline"></ion-icon>
+                </div>
+
+                <div class="contact-info">
+
+                    <a href="{{route('tools.index')}}" class="contact-link">tools</a>
+                </div>
+
+            </li>
             <li class="contact-item" >
 
                 <div class="icon-box ">
@@ -75,7 +87,7 @@
 
                 <div class="contact-info">
 
-                    <a href="#" class="contact-link">Comments</a>
+                    <a href="#" class="contact-link">Commen ts</a>
                 </div>
 
             </li>

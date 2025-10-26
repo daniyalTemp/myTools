@@ -117,6 +117,34 @@ Route::middleware('init')->group(function () {
 
         });
 
+
+    });
+    Route::prefix('tools')->namespace('App\Http\Controllers\tools')->middleware(['auth'])->group(function () {
+        Route::get('/', 'toolscontroller@index')->name('tools.index');
+        Route::post('/encrypt', 'encryptioncontroller@encrypt')->name('tools.encrypt');
+        Route::post('/decrypt', 'encryptioncontroller@decrypt')->name('tools.decrypt');
+
+
+
+
+//        Route::prefix('projects')->group(function () {
+//            Route::get('/', 'projectController@index')->name('dashboard.projects');
+//            Route::get('/add', 'projectController@add')->name('dashboard.projects.new');
+//            Route::get('/edit/{id}', 'projectController@edit')->name('dashboard.projects.edit');
+//            Route::post('/save/{id}', 'projectController@save')->name('dashboard.projects.save');
+//
+//            Route::prefix('type')->group(function () {
+//                Route::get('/', 'projectController@types')->name('dashboard.projects.types');
+//                Route::get('/add', 'projectController@addtype')->name('dashboard.projects.type.new');
+//                Route::get('/edit/{id}', 'projectController@edittype')->name('dashboard.projects.type.edit');
+//                Route::post('/save/{id}', 'projectController@savetype')->name('dashboard.projects.type.save');
+//
+//            });
+//        });
+
+
+
+
     });
 
 });
