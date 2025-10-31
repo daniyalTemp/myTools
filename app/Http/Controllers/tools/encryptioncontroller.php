@@ -4,6 +4,7 @@ namespace App\Http\Controllers\tools;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use function PHPUnit\Framework\isJson;
 
 class encryptioncontroller extends Controller
 {
@@ -29,7 +30,12 @@ class encryptioncontroller extends Controller
         $action = "Decryption";
         $key = hash('sha256', $myKey, true);
         $encrypt = openssl_decrypt($request->data, 'aes-256-cbc', $key, false, $iv);
+
         $result = (json_decode(json_decode($encrypt)));
+        if ($result== null)
+            $result= $encrypt;
+
+//        dd(gettype($result));
         return view('tools.result', compact('result', 'myKey', 'iv', "action"));
 
     }
