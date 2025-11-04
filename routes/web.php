@@ -119,10 +119,13 @@ Route::middleware('init')->group(function () {
 
 
     });
+
+
+
     Route::prefix('tools')->namespace('App\Http\Controllers\tools')->middleware(['auth'])->group(function () {
         Route::get('/', 'toolscontroller@index')->name('tools.index');
         Route::post('/encrypt', 'encryptioncontroller@encrypt')->name('tools.encrypt');
-        Route::post('/decrypt', 'encryptioncontroller@decrypt')->name('tools.decrypt');
+        Route::post('/decrypt', 'decryptioncontroller@decrypt')->name('tools.decrypt');
 
 
 

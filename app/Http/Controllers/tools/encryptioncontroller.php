@@ -16,27 +16,21 @@ class encryptioncontroller extends Controller
 
         $action = "Encryption";
         $key = hash('sha256', $myKey, true);
+        if (json_decode($request->data) == null) {
+            $rawData = $request->data;
+        }
+        else {
+            $rawData = json_decode($request->data);
+            $rawData = json_encode($rawData);
+        }
 
-        $result = openssl_encrypt(json_encode($request->data), 'aes-256-cbc', $key, false, $iv); //Decrypt
+//        dd($rawData);
+
+        $result = openssl_encrypt($rawData, 'aes-256-cbc', $key, false, $iv); //Decrypt
 
         return view('tools.result', compact('result', 'myKey', 'iv', "action"));
 
     }
 
-    public function decrypt(Request $request)
-    {
-        $iv = $request->iv;
-        $myKey = $request->key;
-        $action = "Decryption";
-        $key = hash('sha256', $myKey, true);
-        $encrypt = openssl_decrypt($request->data, 'aes-256-cbc', $key, false, $iv);
 
-        $result = (json_decode(json_decode($encrypt)));
-        if ($result== null)
-            $result= $encrypt;
-
-//        dd(gettype($result));
-        return view('tools.result', compact('result', 'myKey', 'iv', "action"));
-
-    }
 }
