@@ -10,16 +10,16 @@
     </header>
 
     <section class="blog-posts">
-        <form action="{{route('contactMe')}}" method="post" class="form" data-form>
+        <form action="{{route('tools.decodeBase64')}}" method="post" class="form" enctype="multipart/form-data" data-form>
             {{csrf_field()}}
 
 
             <textarea name="data" class="form-input" placeholder="Your Data" required
                       data-form-input></textarea>
 
-            <button class="form-btn" type="submit" disabled data-form-btn>
+            <button class="form-btn" type="submit" >
                 <ion-icon name="paper-plane"></ion-icon>
-                <span>Encrypt</span>
+                <span>Decode</span>
             </button>
 
         </form>

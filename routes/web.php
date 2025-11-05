@@ -129,6 +129,11 @@ Route::middleware('init')->group(function () {
 
 
 
+        Route::post('/decodeBase64', 'decodecontroller@decodeBase64')->name('tools.decodeBase64');
+        Route::post('/encodeBase64', 'encodecontroller@encodeBase64')->name('tools.encodeBase64');
+
+
+
 
 //        Route::prefix('projects')->group(function () {
 //            Route::get('/', 'projectController@index')->name('dashboard.projects');
