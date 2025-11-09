@@ -15,15 +15,14 @@ class dashboardController extends Controller
     public function index(Request $request)
     {
 
-        $counts = [
-            'blogs'=>count(blog::all()),
-            'projects'=>count(project::all()),
-            'clients'=>count(client::all()),
-            'comments'=>count(comment::all()),
 
-        ];
-        $newComments = contact::orderBy('created_at', 'desc')->where('seen',false)->get();
 
-        return view('back.panel.home' ,compact('counts', 'newComments'));
+        return view('back.panel.home');
+    }
+
+    public function addUser(Request $request)
+    {
+
+
     }
 }

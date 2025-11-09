@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>vCard - Personal Portfolio</title>
+    <title>my tools</title>
 
     <!--
       - favicon
@@ -15,7 +15,7 @@
     <!--
       - custom css link
     -->
-{{--    <link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">--}}
+    {{--    <link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">--}}
 
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
 
@@ -42,7 +42,7 @@
 
 <main>
 
-    @include('back.layout.sidebar')
+    @include('tools.sidebar')
 
     <div class="main-content">
         {{--        @include('back.layout.navbar')--}}
@@ -58,7 +58,7 @@
 <!--
   - custom js link
 -->
-<script src="{{asset('/assets/js/toolsscript.js')}}"></script>
+<script src="{{asset('/assets/js/script.js')}}"></script>
 
 <script type="text/javascript" src="{{asset('assets/js/froala_editor.pkgd.min.js')}}"></script>
 

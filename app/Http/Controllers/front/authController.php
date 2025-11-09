@@ -10,6 +10,14 @@ use Illuminate\Support\Facades\Auth;
 
 class authController extends Controller
 {
+
+
+    public function pineapple()
+    {
+
+        return view('pineapple');
+    }
+
     private function getConfig()
     {
         $config = config::all();
