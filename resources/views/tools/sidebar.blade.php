@@ -10,7 +10,7 @@
 
             <h1 class="name" title="Richard hanrick">my tools</h1>
 
-           
+
         </div>
 
         <button class="info_more-btn" data-sidebar-btn>
